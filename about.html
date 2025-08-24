@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us - General Hospital</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+
+  <style>
+   /* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #d4f0fc 0%, #f9fbfd 100%);
+  color: #2c3e50;
+  line-height: 1.65;
+  padding: 30px 20px;
+  transition: background 0.5s ease;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+header h1 {
+  font-size: 3rem;
+  color: #1478aa;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  text-shadow: 0 3px 8px rgba(20, 120, 170, 0.4);
+  animation: slideInTop 1s ease forwards;
+}
+
+header p {
+  font-size: 1.3rem;
+  color: #436f8a;
+  max-width: 650px;
+  margin: 0 auto;
+  font-style: italic;
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #e8f4fb;
+  border-radius: 20px;
+  padding: 40px 50px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.852);
+  border: 4px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1.8s ease forwards;
+
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 24px;
+  background: linear-gradient(270deg, #3372a2, #071820, #1b5c7c);
+  background-size: 600% 600%;
+  animation: borderWave 12s ease infinite;
+  z-index: 0;
+  filter: blur(8px);
+  opacity: 0.7;
+  pointer-events: none;
+  
+}
+
+section {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 35px;
+}
+
+section h2 {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  border-left: 5px solid #33a6ff;
+  padding-left: 12px;
+  font-weight: 600;
+  /* text-shadow: 1px 1px 3px (51, 166, 255, 0.4); */
+  transition: color 0.2s ease;
+}
+
+.shake-section:hover h2,
+.shake-section:focus h2 {
+  color: #33a6ff;
+  border-left: 5px solid white;
+}
+
+section p {
+  font-size: 1.1rem;
+  color: #34495e;
+  line-height: 1.75;
+  padding-left: 10px;
+  border-left: 3px solid #bbe1ff;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px #d0e9ff;
+  transition: background 0.2s ease;
+}
+
+.shake-section:hover p,
+.shake-section:focus p {
+  background: #d0ebff;
+}
+
+hr {
+  border: none;
+  height: 1.5px;
+  background: linear-gradient(to right, #1478aa, #33a6ff);
+  margin: 20px 0 30px 0;
+  border-radius: 5px;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes borderWave {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Shake animation keyframes (your existing) */
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* Shake effect on hover or focus for all sections with class shake-section */
+.shake-section:hover,
+.shake-section:focus {
+  animation: shake 0.2s;
+  animation-iteration-count: 1;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 650px) {
+  main {
+    padding: 25px 20px;
+    border-radius: 15px;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+    letter-spacing: normal;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  section p {
+    font-size: 1rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+    <header>
+    <h1>General Hospital</h1>
+    <p>Your trusted partner for compassionate healthcare services.</p>
+  </header>
+
+
+  <main>
+	<section class="shake-section">
+	<h2>About Us</h2>
+	<p>Welcome to General Hospital, your trusted partner in health and healing. For decades, we have been dedicated to providing comprehensive and compassionate medical care to our community. Our hospital combines advanced technology with a team of highly skilled professionals to ensure every patient receives personalized attention.</p>
+	</section>
+
+<section class="shake-section">
+  <h2>Who We Are</h2>
+  <p>General Hospital is a multi-specialty healthcare center offering wide-ranging medical services. Our team includes experienced doctors, nurses, and support staff committed to delivering high-quality treatment in a safe and welcoming environment.</p>
+</section>
+
+<section class="shake-section">
+  <h2>Our Mission</h2>
+  <p>Our mission is to improve lives by delivering exceptional healthcare, nurturing hope, and enabling recovery. We believe every patient deserves respect, empathy, and the highest standards of medical excellence.</p>
+</section>
+
+<section class="shake-section">
+  <h2>What We Offer</h2>
+  <p>* 24/7 Emergency Services<br>
+
+* Outpatient and Inpatient Care<br>
+
+* Advanced Diagnostic and Surgical Facilities<br>
+
+* Specialized Departments (Cardiology, Pediatrics, Orthopedics, etc.)<br>
+
+* Preventive Health Programs<br>
+
+* Patient-Centered Amenities</p>
+</section>
+
+<section class="shake-section">
+  <h2>Our History</h2>
+  <p>Founded with a vision to serve the community, General Hospital has been a cornerstone of healthcare for more than three decades. From our humble beginnings as a modest medical facility, we have grown into a leading hospital recognized for excellence in clinical care, technology, and patient satisfaction.</p>
+</section>
+
+<section class="shake-section">
+  <h2>Our Team</h2>
+  <p>Our greatest strength lies in our people. The hospital boasts a diverse team of board-certified physicians, compassionate nurses, dedicated technicians, and caring support staff. Continuous training and education ensure our staff remains at the forefront of medical advancements.</p>
+</section>
+
+<section class="shake-section">
+  <h2>Patient Experience</h2>
+  <p>We understand that visiting a hospital can be overwhelming. That’s why we focus on making every step of your journey as smooth and reassuring as possible. From welcoming reception staff to attentive caregivers and state-of-the-art patient rooms, we prioritize your comfort, privacy, and convenience.</p>
+</section>
+
+<section class="shake-section">
+  <h2>Innovation & Technology</h2>
+  <p>Committed to delivering the best care, General Hospital invests in the latest technology and medical equipment. Our diagnostic and treatment facilities are designed to support accurate, timely, and minimally invasive procedures, delivering better outcomes and faster recovery for our patients.</p>
+</section>
+
+<section class="shake-section">
+  <h2>Community Outreach</h2>
+  <p>Beyond hospital walls, General Hospital engages in community health programs, preventive screenings, education seminars, and outreach clinics. We believe in empowering our community with the knowledge and resources needed to lead healthier lives.</p>
+</section>
+
+<section class="shake-section">
+  <h2>Quality & Accreditation</h2>
+  <p>Our hospital adheres to stringent quality standards and is accredited by respected healthcare organizations. Patient safety, strict infection control, and continuous improvement are at the heart of our practices.</p>
+</section>
+
+<section class="shake-section">
+  <hr>
+  <br>
+  <p>At General Hospital, it’s not just about treating illness — it’s about caring for people, restoring health, and uplifting lives. We are honored to be a part of your healthcare journey and are committed to delivering excellence, every day.</p>
+</section>
+
+  </main>
+  
+  <script>
+    // Optional: You can enhance animations or add interactive elements here
+    // Example: fade in sections one by one after page load
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll('main section');
+      sections.forEach((section, index) => {
+        section.style.opacity = 0;
+        setTimeout(() => {
+          section.style.transition = "opacity 1s ease";
+          section.style.opacity = 1;
+        }, index * 600);
+      });
+    });
+  </script>
+</body>
+</html>
